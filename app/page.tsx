@@ -9,25 +9,43 @@ const topics = ["AI Agents", "MCP Servers", "Browser Automation", "Dev Infra", "
 export default function HomePage() {
   return (
     <main className="shell">
-      <div className="page">
+      <RadarHero />
+      <div className="page page-cinematic">
         <Nav />
-        <section className="hero">
-          <div className="hero-copy">
-            <div className="eyebrow">GitHub Future Radar</div>
-            <h1>Predict the next breakout repo.</h1>
-            <p>
+        <section className="hero-cinematic">
+          <div className="hero-copy-centered">
+            <div className="eyebrow glow-text">GitHub Future Radar</div>
+            <h1 className="cinematic-title">Predict the next breakout repo.</h1>
+            <p className="cinematic-lede">
               TrendForge turns repository activity into a measurable forecast: breakout probability, projected growth,
               and the signal graph behind the call.
             </p>
-            <ScanForm />
-            <div className="chips">
+            
+            <div className="scan-center">
+              <ScanForm />
+            </div>
+            
+            <div className="chips-center">
               {topics.map((topic) => (
                 <span key={topic} className="chip">
                   {topic}
                 </span>
               ))}
             </div>
-            <div className="chips" style={{ marginTop: 28 }}>
+            
+            <div className="stats-center glass-panel">
+              <div className="stat-item">
+                <span className="subtle">Breakout confidence</span>
+                <strong>86%</strong>
+              </div>
+              <div className="spacer" />
+              <div className="stat-item">
+                <span className="subtle">Forecast windows</span>
+                <strong>7 / 30 / 90</strong>
+              </div>
+            </div>
+            
+            <div className="chips-center" style={{ marginTop: 24 }}>
               <Link href="/explore" className="ghost-button">
                 Explore future winners
               </Link>
@@ -36,7 +54,6 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <RadarHero />
         </section>
       </div>
     </main>
